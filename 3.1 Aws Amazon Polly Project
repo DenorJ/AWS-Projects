@@ -1,0 +1,35 @@
+3.1 Aws Amazon Polly Project Overview
+In this project, we will be developing a text narrator using Amazon Polly. A piece of text (book, article, newsletter) will be uploaded in an Amazon S3 bucket and converted to speech. The voice, pitch and speed parmeters can be adjusted.
+Here's a step-by-step guide on how I develop a text narrator using Amazon Polly
+Step 1: Exploring Amazon Polly
+I began by opening the Amazon Polly console and signing in with my AWS credentials. I experimented with different voices by entering text, selecting a voice, and adjusting the pitch and speed to explore the available options.
+Step 2: Creating an IAM Role
+Next, I accessed the IAM console and created a new role. I selected "AWS service" and chose "Lambda" as the service that would use this role. I then attached the policies "AmazonPollyFullAccess" and "AmazonS3FullAccess" to ensure access to Amazon Polly and S3. Finally, I named the role "PollyLambdaRole" and created it.
+Step 3: Creating an S3 Bucket
+I opened the Amazon S3 console and created a new bucket with a unique name, "text-to-speech-bucket". I configured the bucket settings, leaving the default settings unless specific configurations were required for my project.
+Step 4: Writing Lambda Function Code
+I navigated to the AWS Lambda console and created a new function called "PollyTextToSpeech". I selected JavaScript as the runtime and wrote a function that read text from the S3 bucket, used Amazon Polly to convert it to speech, and saved the audio file back to the S3 bucket.
+Step 5: Checking the Output of Amazon Polly
+I uploaded my text file to the S3 bucket and triggered the Lambda function, either manually through the Lambda console or by setting up an S3 trigger. I then checked the S3 bucket for the output audio file and played it to ensure the text had been converted to speech correctly.
+Services Used
+Amazon Polly: Converts text to lifelike speech with customizable features.
+AWS Management Console: Manages accounts and configures Amazon Polly.
+AWS IAM: Ensures secure access by managing user permissions.
+Implementing a text narrator using Amazon Polly can bring several benefits to an organisation:
+1. Enhanced Accessibility
+Converting text to speech can make content accessible to individuals with visual impairments or reading difficulties, ensuring that everyone has equal access to important information.
+2. Multilingual Support
+Amazon Polly supports numerous languages and voices, enabling organisations to reach a global audience by providing content in multiple languages.
+3. Improved User Experience
+Audio content can enhance user experience on websites and applications by offering an alternative to reading. This can be particularly beneficial for users who are on the move or prefer listening over reading.
+4. Cost Efficiency
+Automating the process of text-to-speech conversion can save time and resources compared to hiring voice actors for every piece of content. This efficiency can be especially valuable for large volumes of text, such as newsletters, articles, or user guides.
+5. Consistency and Quality
+Amazon Polly provides high-quality, natural-sounding speech. The consistency in voice and delivery ensures that the audio content remains professional and engaging.
+6. Enhanced Engagement
+Audio content can increase user engagement by catering to different learning styles and preferences. For example, some users may find it easier to retain information when they listen rather than read.
+7. Accessibility Compliance
+For organisations in sectors like education, government, and healthcare, providing accessible content can help comply with accessibility regulations and standards.
+8. Scalability
+Once set up, the text-to-speech system can easily scale to accommodate large volumes of text, making it suitable for organisations of any size.
+By leveraging Amazon Polly, organisations can enhance their reach, improve accessibility, and create a more inclusive and engaging experience for their audience.
